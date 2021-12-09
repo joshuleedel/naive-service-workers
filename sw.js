@@ -15,11 +15,12 @@ addEventListener('fetch', fetchEvent => {
   })());
 });
 
-const LATEST_CACHE_ID = 'v1';
+const LATEST_CACHE_ID = 'v2';
 
 addEventListener('install', installEvent => {
   installEvent.waitUntil(
-    caches.open(LATEST_CACHE_ID).then(cache => cache.addAll['/']))
+    caches.open(LATEST_CACHE_ID).then(cache => cache.addAll(['/']))
+  );
 });
 
 addEventListener('activate', activateEvent => {
